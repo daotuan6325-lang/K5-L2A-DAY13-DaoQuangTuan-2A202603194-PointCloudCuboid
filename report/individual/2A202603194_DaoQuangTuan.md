@@ -30,11 +30,15 @@ Tám frame lướt:
 
 | Vật | Frame, idx | Class | Mũi tên yaw đúng hướng? | Đáy chạm đường? | Đã kiểm Top/Side/Front + ảnh? | Kích thước trong bảng 4.3? |
 |---|---|---|---|---|---|---|
-| (a) xe con gần | TODO(học viên) | | | | | |
-| (b) xe buýt hoặc xe tải | TODO(học viên) | | | | | |
-| (c) người đi bộ hoặc xe hai bánh | TODO(học viên) | | | | | |
+| (a) xe con gần | s01f03, 16 | Car | Có: yaw 266,4°, gần 270°, xe cùng chiều phía trước, vạch đỏ chỉ về đầu xe (−y) | Có: z đáy = −1,050 − 1,570/2 = −1,835 m, lệch mặt đường ~−1,7 m khoảng 0,13 m | Có, đã kiểm Top/Side/Front; đối chiếu cam09 | Có: 4,42 × 1,86 × 1,57 m, trong khoảng sedan 3,8–5,0 × 1,70–1,90 × 1,40–1,60 m |
+| (b) xe buýt hoặc xe tải | s01f03, 10 | Truck | Có: yaw 88,2°, gần 90°, xe đi ngược chiều, vạch đỏ chỉ về đầu xe (+y) | Có: z đáy = −0,310 − 3,310/2 = −1,965 m, lệch khoảng 0,27 m (trong ngưỡng 0,3 m) | Có, đã kiểm Top/Side/Front | Dài 8,75 m và cao 3,31 m trong khoảng xe tải hộp (5,5–9,0 m; 2,40–3,50 m); **rộng 2,81 m vượt khoảng 2,00–2,55 m**. Giữ nguyên vì hộp khớp cụm điểm trên Top; giả thuyết: hộp bao cả gương chiếu hậu hoặc phần thùng chìa ra |
+| (c) người đi bộ hoặc xe hai bánh | s01f03, 9 | Pedestrian | Người đứng yên: căn theo hướng mặt, yaw 321,4° | Có: z đáy = −0,660 − 1,800/2 = −1,560 m, lệch khoảng 0,14 m | Có, đã kiểm Top/Side/Front | Có: 0,85 × 0,75 × 1,80 m, trong khoảng người lớn 0,4–0,9 × 0,5–0,9 × 1,50–1,95 m |
 
-TODO(học viên): vòng hiệu chuẩn: cuboid của bạn lệch so với các bạn ở điểm nào, cả lớp chốt cách hiểu guideline nào? Và các vật bạn **bỏ qua vì không đủ cơ sở** (frame, vị trí, mô tả, loại nghi vấn như UNCERTAIN_CLASS / LOW_VISIBILITY), hoặc ghi "không có".
+TODO(học viên): vòng hiệu chuẩn (có tham gia không; nếu có, hộp của bạn lệch các bạn ở điểm nào, lớp chốt cách hiểu nào).
+
+Vật bỏ qua vì không đủ cơ sở (đã vẽ rồi xoá sau `selfcheck`):
+- s01f24, người đi bộ phía sau bên trái, cách khoảng 38,9 m: chỉ 3 điểm LiDAR, không đủ để xác định là người: **LOW_VISIBILITY**.
+- s05f07, người đi bộ phía trước hơi lệch phải, cách khoảng 46,8 m (sát ranh 50 m): chỉ 4 điểm: **LOW_VISIBILITY** (và UNCERTAIN_SCOPE vì gần ngưỡng 50 m).
 
 ## 4. Bốn hiện tượng chất lượng (Bước 4)
 Nguyên nhân ghi là **giả thuyết**. Frame mượn thì ghi rõ nguồn: task chung, hoặc MSSV của bạn cho mượn.
