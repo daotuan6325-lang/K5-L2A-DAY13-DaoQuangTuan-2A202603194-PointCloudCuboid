@@ -78,7 +78,7 @@ Cột "Hộp" ghi `idx` ở lần 1; sau khi xoá hộp, `idx` lần 2 đổi nh
 | s05f42 #6 Pedestrian | Đáy cao hơn mặt đường 0,52 m; 43 điểm sát ngoài mép | **Đã sửa:** hạ đáy z_bottom −0,605 m → −0,937 m | Khoảng hở với mặt đường còn 0,19 m, hết cờ |
 | s05f42 #8 Car | width 2,36 m, height 2,50 m ngoài khoảng của Car | **Đã sửa:** đổi class Car → Truck (quá cao, rộng so với xe con) | Hết cờ |
 | s03f12 #3 Pedestrian | Đáy cao hơn mặt đường 0,78 m; 15 điểm sát ngoài mép | **Đã sửa:** hạ đáy qua hai lần, z_bottom −0,770 m → −1,230 m | Hết cờ lơ lửng; còn cờ 15 điểm sát ngoài mép (giữ nguyên) |
-| s05f07 #4 Car (sau: #3) | Đáy thấp hơn mặt đường 1,00 m (chìm?) | Đã chỉnh đáy hai lần, z_bottom −1,515 m → −1,651 m → −1,530 m | Vẫn chìm 1,02 m |
+| s05f07 #4 Car (sau: #3) | Đáy thấp hơn mặt đường 1,00 m (chìm?) | **Giữ nguyên** sau khi thử chỉnh (z_bottom −1,515 m → −1,651 m → −1,530 m): nâng hộp lên khoảng 1 m thì đáy không còn khớp điểm LiDAR của xe; giả thuyết là `selfcheck` ước mặt đường quanh hộp lệch (lấy nhầm điểm vật khác quanh xe ở ~37 m) | Còn cờ chìm 1,02 m |
 | s01f03 #14 Car (sau: #13) | Đáy cao hơn mặt đường 0,49 m (lơ lửng?) | **Đã sửa:** hạ đáy z_bottom −1,405 m → −1,883 m | Hết cờ |
 | s05f42 #2 Car | width 2,31 m, height 2,42 m ngoài khoảng của Car | Chưa sửa | Vẫn cờ kích thước |
 | s01f24 #16 Pedestrian (lần 2: #15) | 157 điểm sát ngoài mép | **Giữ nguyên:** cờ "điểm sát ngoài mép" gặp cả ở nhãn chuẩn với người, xe hai bánh (22–28%, theo `docs/SELF_CHECK.md`) | Còn cờ |
