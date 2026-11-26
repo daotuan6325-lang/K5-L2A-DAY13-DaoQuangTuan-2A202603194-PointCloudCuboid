@@ -77,9 +77,9 @@ Cột "Hộp" ghi `idx` ở lần 1; sau khi xoá hộp, `idx` lần 2 đổi nh
 | s01f03 #2 Bus | 102 điểm sát ngoài mép; width 3,11 m | **Đã sửa:** thu width 3,11 m → 2,50 m (đúng bảng 4.3 xe buýt 2,50–2,60 m), dời tâm cho khớp thân xe | Hết cờ |
 | s05f42 #6 Pedestrian | Đáy cao hơn mặt đường 0,52 m; 43 điểm sát ngoài mép | **Đã sửa:** hạ đáy z_bottom −0,605 m → −0,937 m | Khoảng hở với mặt đường còn 0,19 m, hết cờ |
 | s05f42 #8 Car | width 2,36 m, height 2,50 m ngoài khoảng của Car | **Đã sửa:** đổi class Car → Truck (quá cao, rộng so với xe con) | Hết cờ |
-| s03f12 #3 Pedestrian | Đáy cao hơn mặt đường 0,78 m; 15 điểm sát ngoài mép | **Đã sửa một phần:** hạ đáy −0,770 m → −0,954 m | Vẫn lơ lửng 0,60 m |
-| s05f07 #4 Car (lần 2: #3) | Đáy thấp hơn mặt đường 1,00 m (chìm?) | Đã chỉnh đáy −1,515 m → −1,651 m | Vẫn chìm 1,14 m |
-| s01f03 #14 Car (lần 2: #13) | Đáy cao hơn mặt đường 0,49 m (lơ lửng?) | Chưa sửa | Vẫn lơ lửng 0,49 m |
+| s03f12 #3 Pedestrian | Đáy cao hơn mặt đường 0,78 m; 15 điểm sát ngoài mép | **Đã sửa:** hạ đáy qua hai lần, z_bottom −0,770 m → −1,230 m | Hết cờ lơ lửng; còn cờ 15 điểm sát ngoài mép (giữ nguyên) |
+| s05f07 #4 Car (sau: #3) | Đáy thấp hơn mặt đường 1,00 m (chìm?) | Đã chỉnh đáy hai lần, z_bottom −1,515 m → −1,651 m → −1,530 m | Vẫn chìm 1,02 m |
+| s01f03 #14 Car (sau: #13) | Đáy cao hơn mặt đường 0,49 m (lơ lửng?) | **Đã sửa:** hạ đáy z_bottom −1,405 m → −1,883 m | Hết cờ |
 | s05f42 #2 Car | width 2,31 m, height 2,42 m ngoài khoảng của Car | Chưa sửa | Vẫn cờ kích thước |
 | s01f24 #16 Pedestrian (lần 2: #15) | 157 điểm sát ngoài mép | **Giữ nguyên:** cờ "điểm sát ngoài mép" gặp cả ở nhãn chuẩn với người, xe hai bánh (22–28%, theo `docs/SELF_CHECK.md`) | Còn cờ |
 | s02f23 #6 Pedestrian | 11 điểm sát ngoài mép | **Giữ nguyên:** như trên | Còn cờ |
@@ -88,7 +88,7 @@ Cột "Hộp" ghi `idx` ở lần 1; sau khi xoá hộp, `idx` lần 2 đổi nh
 | s03f12 #10 Pedestrian | 25 điểm sát ngoài mép | **Giữ nguyên:** như trên | Còn cờ |
 | s03f44 #2 Pedestrian | 20 điểm sát ngoài mép | **Giữ nguyên:** như trên | Còn cờ |
 
-Sau khi sửa và chạy lại `sync`: bảng A còn **141 cuboid** (xoá 3 hộp: 1 hộp trùng, 2 hộp quá ít điểm), `selfcheck` còn cờ **10/141** cuboid. Hai cuboid sửa rõ nhất: s01f03 #2 Bus (width 3,11 m → 2,50 m) và s05f42 #6 Pedestrian (z_bottom −0,605 m → −0,937 m, hết lơ lửng).
+Sau khi sửa và chạy lại `sync` (lần cuối): bảng A còn **141 cuboid** (xoá 3 hộp: 1 hộp trùng, 2 hộp quá ít điểm), `selfcheck` còn cờ **9/141** cuboid. Hai cuboid sửa rõ nhất: s01f03 #2 Bus (width 3,11 m → 2,50 m) và s01f03 #14 Car (z_bottom −1,405 m → −1,883 m, hết lơ lửng).
 
 TODO(học viên): đổi kiểm: MSSV người đã kiểm chéo với bạn, hai con số nào được đối chiếu với bảng A, khớp hay lệch (lệch thì đã sửa gì).
 
