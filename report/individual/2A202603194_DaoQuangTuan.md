@@ -63,7 +63,32 @@ Mật độ theo khoảng cách (4 cuboid ở các `dist_m` khác nhau):
 |---|---|---|
 | TODO(học viên) | | |
 
-TODO(học viên): một câu quy luật ("xa gấp … lần thì số điểm còn khoảng …") và so với đường cong ở slide bài giảng (xe con: khoảng 1968 điểm ở 0–10 m, 718 ở 10–20 m, 214 ở 20–30 m, 72 ở 30–40 m, 19 ở 60–80 m). Rồi phần tự kiểm: hai cuboid bạn **đã sửa** sau `preview` / `selfcheck` (frame, idx, sửa gì), và những cảnh báo bạn **giữ nguyên** kèm lý do.
+TODO(học viên): một câu quy luật ("xa gấp … lần thì số điểm còn khoảng …") và so với đường cong ở slide bài giảng (xe con: khoảng 1968 điểm ở 0–10 m, 718 ở 10–20 m, 214 ở 20–30 m, 72 ở 30–40 m, 19 ở 60–80 m).
+
+**Tự kiểm.** Lần `sync` đầu tiên: `selfcheck` cờ 17/144 cuboid (phiếu `submission/D13-2A202603194-tukiem.csv`). Cảnh báo chỉ là gợi ý xem lại; với mỗi hộp tôi mở lại trên CVAT và ảnh `preview`, rồi sửa hoặc giữ nguyên kèm lý do.
+
+Cột "Hộp" ghi `idx` ở lần 1; sau khi xoá hộp, `idx` lần 2 đổi như ghi trong ngoặc.
+
+| Hộp lần 1 (frame #idx, class) | Cảnh báo của `selfcheck` (lần 1) | Xử lý | Kết quả `sync` lần 2 |
+|---|---|---|---|
+| s01f03 #9, #10 Pedestrian | Hai hộp chồng lên nhau; #9 có 53 điểm sát ngoài mép | **Đã sửa:** một người bị vẽ hai hộp, xoá một hộp, giữ hộp còn lại | Còn 1 hộp (#9), hết cờ |
+| s01f24 #3 Pedestrian | Rất ít điểm (3), cách 38,86 m | **Đã xoá:** 3 điểm không đủ cơ sở (LOW_VISIBILITY) | Không còn trong bảng A |
+| s05f07 #1 Pedestrian | Rất ít điểm (4), cách 46,83 m | **Đã xoá:** 4 điểm, sát ranh 50 m, không đủ cơ sở (LOW_VISIBILITY) | Không còn trong bảng A |
+| s01f03 #2 Bus | 102 điểm sát ngoài mép; width 3,11 m | **Đã sửa:** thu width 3,11 m → 2,50 m (đúng bảng 4.3 xe buýt 2,50–2,60 m), dời tâm cho khớp thân xe | Hết cờ |
+| s05f42 #6 Pedestrian | Đáy cao hơn mặt đường 0,52 m; 43 điểm sát ngoài mép | **Đã sửa:** hạ đáy z_bottom −0,605 m → −0,937 m | Khoảng hở với mặt đường còn 0,19 m, hết cờ |
+| s05f42 #8 Car | width 2,36 m, height 2,50 m ngoài khoảng của Car | **Đã sửa:** đổi class Car → Truck (quá cao, rộng so với xe con) | Hết cờ |
+| s03f12 #3 Pedestrian | Đáy cao hơn mặt đường 0,78 m; 15 điểm sát ngoài mép | **Đã sửa một phần:** hạ đáy −0,770 m → −0,954 m | Vẫn lơ lửng 0,60 m |
+| s05f07 #4 Car (lần 2: #3) | Đáy thấp hơn mặt đường 1,00 m (chìm?) | Đã chỉnh đáy −1,515 m → −1,651 m | Vẫn chìm 1,14 m |
+| s01f03 #14 Car (lần 2: #13) | Đáy cao hơn mặt đường 0,49 m (lơ lửng?) | Chưa sửa | Vẫn lơ lửng 0,49 m |
+| s05f42 #2 Car | width 2,31 m, height 2,42 m ngoài khoảng của Car | Chưa sửa | Vẫn cờ kích thước |
+| s01f24 #16 Pedestrian (lần 2: #15) | 157 điểm sát ngoài mép | **Giữ nguyên:** cờ "điểm sát ngoài mép" gặp cả ở nhãn chuẩn với người, xe hai bánh (22–28%, theo `docs/SELF_CHECK.md`) | Còn cờ |
+| s02f23 #6 Pedestrian | 11 điểm sát ngoài mép | **Giữ nguyên:** như trên | Còn cờ |
+| s02f23 #8 Pedestrian | 30 điểm sát ngoài mép | **Giữ nguyên:** như trên | Còn cờ |
+| s02f23 #11 Cyclist | 50 điểm sát ngoài mép | **Giữ nguyên:** như trên | Còn cờ |
+| s03f12 #10 Pedestrian | 25 điểm sát ngoài mép | **Giữ nguyên:** như trên | Còn cờ |
+| s03f44 #2 Pedestrian | 20 điểm sát ngoài mép | **Giữ nguyên:** như trên | Còn cờ |
+
+Sau khi sửa và chạy lại `sync`: bảng A còn **141 cuboid** (xoá 3 hộp: 1 hộp trùng, 2 hộp quá ít điểm), `selfcheck` còn cờ **10/141** cuboid. Hai cuboid sửa rõ nhất: s01f03 #2 Bus (width 3,11 m → 2,50 m) và s05f42 #6 Pedestrian (z_bottom −0,605 m → −0,937 m, hết lơ lửng).
 
 TODO(học viên): đổi kiểm: MSSV người đã kiểm chéo với bạn, hai con số nào được đối chiếu với bảng A, khớp hay lệch (lệch thì đã sửa gì).
 
