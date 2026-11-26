@@ -14,8 +14,8 @@ Hai frame đọc kỹ. Ảnh: `t1-<frame>-3d`, `t1-<frame>-top` (ảnh nhìn t�
 
 | Frame | Phía trước xe ở cạnh nào của ảnh nhìn từ trên xuống; +x, +y chỉ về đâu | Mặt đường (phẳng/dốc; thấp hơn LiDAR ~ m) | Vật xa nhất đọc được (~ m) | Loại vật thấy | Vật phía sau / hai bên | Cụm chưa đọc được |
 |---|---|---|---|---|---|---|
-| TODO(học viên) | | | | | | |
-| TODO(học viên) | | | | | | |
+| s01f03 | Phía trước (−y) ở cạnh trên ảnh top toàn cảnh; +x chỉ sang trái ảnh (bên trái xe); +y chỉ xuống cạnh dưới (sau xe) | Phẳng, thấp hơn LiDAR khoảng 1,7 m | Khoảng 45–50 m (xe con rìa trên-trái, 2 xe con rìa dưới-trái và xe lớn ở góc dưới-phải) | 16 xe con, 1 xe tải vừa, 1 xe lớn (xe buýt hoặc xe tải thùng dài), 1 người hoặc xe hai bánh; xung quanh có cây cối và tường/công trình hai bên | Sát phải 1 xe con (~3–4 m); trước-trái 1 xe con (~10 m), sau-trái 1 xe con (~8 m); bên trái 6 xe con và 1 xe tải (~12–20 m); phía sau 2 xe con (~12–18 m), 1 cụm nhỏ sau-phải (~20 m), 1 xe con sau-phải (~28 m), 1 xe lớn góc dưới-phải (~45 m) | TODO(học viên) |
+| TODO(học viên) s01f24 | | | | | | |
 
 TODO(học viên): 3 điều **chỉ camera** cho biết và 3 điều **chỉ LiDAR** cho biết, lấy từ chính hai frame trên.
 
